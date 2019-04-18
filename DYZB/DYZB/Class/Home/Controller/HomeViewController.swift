@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     
     
     //懒加载pageContentView属性
-    lazy var pagecontentView:pageContentView = {
+    lazy var pagecontentView:pageContentView = {[weak self] in
         //确定内容的frame
         let pageViewFrame = CGRect(x: 0, y: kStatusBarH + kNavgationBarH + kPageViewH, width: kScreenW, height: kScreenH - kStatusBarH - kNavgationBarH - kPageViewH)
         //确定所有的子控制器
@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
             childVCs.append(vc)
             vc.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue: CGFloat(arc4random_uniform(255)))
         }
+        
         let pageView = pageContentView(frame: pageViewFrame, childVC: childVCs, parentVC: self)
         
         pageView.backgroundColor = UIColor.purple

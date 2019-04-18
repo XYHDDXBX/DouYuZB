@@ -13,13 +13,13 @@ private let contentCell = "contentCell"
 class pageContentView: UIView {
     //定义属性
     private var childVC:[UIViewController]
-    private var parentVC:UIViewController
+    private var parentVC:UIViewController?
     
     //懒加载定义collectionView属性
-    lazy var collectionView:UICollectionView = {
+    lazy var collectionView:UICollectionView = {[weak self] in
         //创建layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size
+        layout.itemSize = (self?.bounds.size)!
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
@@ -34,7 +34,7 @@ class pageContentView: UIView {
     }()
     
     //定义构造函数
-    init(frame:CGRect,childVC:[UIViewController],parentVC:UIViewController) {
+    init(frame:CGRect,childVC:[UIViewController],parentVC:UIViewController?) {
         self.childVC = childVC
         self.parentVC = parentVC
         super.init(frame: frame)
@@ -49,7 +49,7 @@ class pageContentView: UIView {
     private func setUpCollectionUI(){
         //将所有的子控制器添加到父控制器中
         for childvc in childVC {
-            parentVC.addChildViewController(childvc)
+            parentVC?.addChildViewController(childvc)
         }
         //2.添加UICollectionVIew
         addSubview(collectionView)
