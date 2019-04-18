@@ -15,6 +15,8 @@
 		DF26D9D12268110C00B3115D /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF26D9D02268110C00B3115D /* Live.storyboard */; };
 		DF26D9D32268162F00B3115D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D22268162F00B3115D /* HomeViewController.swift */; };
 		DF26D9D522681E2500B3115D /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D422681E2500B3115D /* UIBarButtonItem-Extension.swift */; };
+		DF26D9D722684FDB00B3115D /* pageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D622684FDB00B3115D /* pageTitleView.swift */; };
+		DF26D9D92268526C00B3115D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D82268526C00B3115D /* common.swift */; };
 		DFC6147F226716D700AED9A5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC6147E226716D700AED9A5 /* Profile.storyboard */; };
 		DFC614812267175E00AED9A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC614802267175E00AED9A5 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +32,8 @@
 		DF26D9D02268110C00B3115D /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		DF26D9D22268162F00B3115D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DF26D9D422681E2500B3115D /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		DF26D9D622684FDB00B3115D /* pageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageTitleView.swift; sourceTree = "<group>"; };
+		DF26D9D82268526C00B3115D /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		DFC6147E226716D700AED9A5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		DFC614802267175E00AED9A5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +179,7 @@
 				DF26D9C32268104700B3115D /* Controller */,
 				DF26D9C42268104700B3115D /* Model */,
 				DF26D9C52268104700B3115D /* View */,
+				DF26D9D82268526C00B3115D /* common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 		DF26D9CA2268106800B3115D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF26D9D622684FDB00B3115D /* pageTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -355,6 +361,8 @@
 			files = (
 				DF05A58A2265D71E003AC9DE /* AppDelegate.swift in Sources */,
 				DFC614812267175E00AED9A5 /* MainViewController.swift in Sources */,
+				DF26D9D92268526C00B3115D /* common.swift in Sources */,
+				DF26D9D722684FDB00B3115D /* pageTitleView.swift in Sources */,
 				DF26D9D522681E2500B3115D /* UIBarButtonItem-Extension.swift in Sources */,
 				DF26D9D32268162F00B3115D /* HomeViewController.swift in Sources */,
 			);

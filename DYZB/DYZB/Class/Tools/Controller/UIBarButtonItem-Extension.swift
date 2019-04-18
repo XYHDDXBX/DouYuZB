@@ -20,11 +20,18 @@ extension UIBarButtonItem{
     }
     */
     //遍历构造函数 1>以convenience关键字开头，2>在构造函数中必须明确调用一个设计的构造函数并且用self调用
-    convenience init(image:String,heightImage:String,size:CGSize) {
+    convenience init(image:String,heightImage:String = "",size:CGSize = CGSize.zero) {
         let btn = UIButton()
         btn.setImage(UIImage(named:image), for: .normal)
-        btn.setImage(UIImage(named: heightImage), for: .highlighted)
-        btn.frame = CGRect(origin: CGPoint.zero, size: size)
+        if heightImage != "" {
+            btn.setImage(UIImage(named: heightImage), for: .highlighted)
+        }
+        
+        if size == CGSize.zero {
+            btn.sizeToFit()
+        }else{
+            btn.frame = CGRect(origin: CGPoint.zero, size: size)
+        }
         self.init(customView:btn)
     }
 }
