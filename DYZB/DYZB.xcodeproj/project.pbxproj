@@ -17,6 +17,8 @@
 		DF26D9D522681E2500B3115D /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D422681E2500B3115D /* UIBarButtonItem-Extension.swift */; };
 		DF26D9D722684FDB00B3115D /* pageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D622684FDB00B3115D /* pageTitleView.swift */; };
 		DF26D9D92268526C00B3115D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D82268526C00B3115D /* common.swift */; };
+		DF26D9DB2268693300B3115D /* pageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9DA2268693300B3115D /* pageContentView.swift */; };
+		DF26D9DD2268771600B3115D /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9DC2268771600B3115D /* UIColor-Extension.swift */; };
 		DFC6147F226716D700AED9A5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC6147E226716D700AED9A5 /* Profile.storyboard */; };
 		DFC614812267175E00AED9A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC614802267175E00AED9A5 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		DF26D9D422681E2500B3115D /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		DF26D9D622684FDB00B3115D /* pageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageTitleView.swift; sourceTree = "<group>"; };
 		DF26D9D82268526C00B3115D /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		DF26D9DA2268693300B3115D /* pageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageContentView.swift; sourceTree = "<group>"; };
+		DF26D9DC2268771600B3115D /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		DFC6147E226716D700AED9A5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		DFC614802267175E00AED9A5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,34 +180,11 @@
 		DF26D9C22268104700B3115D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				DF26D9C32268104700B3115D /* Controller */,
-				DF26D9C42268104700B3115D /* Model */,
-				DF26D9C52268104700B3115D /* View */,
+				DF26D9D422681E2500B3115D /* UIBarButtonItem-Extension.swift */,
 				DF26D9D82268526C00B3115D /* common.swift */,
+				DF26D9DC2268771600B3115D /* UIColor-Extension.swift */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		DF26D9C32268104700B3115D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				DF26D9D422681E2500B3115D /* UIBarButtonItem-Extension.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		DF26D9C42268104700B3115D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DF26D9C52268104700B3115D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		DF26D9C62268105600B3115D /* Model */ = {
@@ -239,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				DF26D9D622684FDB00B3115D /* pageTitleView.swift */,
+				DF26D9DA2268693300B3115D /* pageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,7 +342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF05A58A2265D71E003AC9DE /* AppDelegate.swift in Sources */,
+				DF26D9DD2268771600B3115D /* UIColor-Extension.swift in Sources */,
 				DFC614812267175E00AED9A5 /* MainViewController.swift in Sources */,
+				DF26D9DB2268693300B3115D /* pageContentView.swift in Sources */,
 				DF26D9D92268526C00B3115D /* common.swift in Sources */,
 				DF26D9D722684FDB00B3115D /* pageTitleView.swift in Sources */,
 				DF26D9D522681E2500B3115D /* UIBarButtonItem-Extension.swift in Sources */,
