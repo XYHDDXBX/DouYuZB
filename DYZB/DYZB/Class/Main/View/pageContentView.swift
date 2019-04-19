@@ -13,7 +13,7 @@ private let contentCell = "contentCell"
 class pageContentView: UIView {
     //定义属性
     private var childVC:[UIViewController]
-    private var parentVC:UIViewController?
+    private weak var parentVC:UIViewController?
     
     //懒加载定义collectionView属性
     lazy var collectionView:UICollectionView = {[weak self] in
@@ -74,5 +74,13 @@ extension pageContentView:UICollectionViewDataSource{
         childvc.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(childvc.view)
         return cell
+    }
+}
+
+//对外暴露的方法
+extension pageContentView{
+    func setupX(index:Int)  {
+        let offsetX = CGFloat(index) * collectionView.frame.size.width
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
     }
 }

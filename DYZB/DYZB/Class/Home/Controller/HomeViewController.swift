@@ -13,12 +13,12 @@ let kPageViewH:CGFloat = 40
 
 class HomeViewController: UIViewController {
     //懒加载titleview属性
-    lazy var pageView:pageTitleView = {
+    lazy var pageView:pageTitleView = { [weak self] in
         
         let titles = ["推荐","游戏","娱乐","趣玩"]
-        let frame = CGRect(x: 0, y: kStatusBarH + kNavgationBarH, width:kScreenW, height: kPageViewH)
-        let titleView = pageTitleView(frame: frame, titles: titles)
-//        titleView.backgroundColor = UIColor.red
+        let titleframe = CGRect(x: 0, y: kStatusBarH + kNavgationBarH, width:kScreenW, height: kPageViewH)
+        let titleView = pageTitleView(frame: titleframe, titles: titles)
+        titleView.delagate = self
         return titleView
         
     }()
@@ -100,9 +100,15 @@ extension HomeViewController{
         let item = UIBarButtonItem(customView: btn)
         return item
     }
+    
+    
 }
 
 
-
+extension HomeViewController:pageTitleViewDelegate{
+    func pagetitleView(title: pageTitleView, seleIndex index: Int) {
+        self.pagecontentView.setupX(index: index)
+    }
+}
 
 

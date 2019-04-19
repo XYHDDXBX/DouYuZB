@@ -10,12 +10,22 @@ import UIKit
 
 let kTitleLineH:CGFloat = 2
 var titleLabels:[UILabel] = [UILabel]()
+private var lableIndex:Int = 0
 
+
+//定义代理
+protocol pageTitleViewDelegate : class  {
+    
+    func pagetitleView(title:pageTitleView,seleIndex index:Int)
+    
+}
 
 
 class pageTitleView: UIView {
     //自定义属性
     private var titles:[String]
+    //定义代理属性
+    weak var delagate:pageTitleViewDelegate?
     
     //懒加载scoreView属性
     lazy var scoreView:UIScrollView = {
@@ -77,6 +87,12 @@ extension pageTitleView{
             titleLable.frame = CGRect(x: lableX, y: lableY, width: lableW, height: lableH)
             scoreView.addSubview(titleLable)
             titleLabels.append(titleLable)
+            
+            //给lable添加点击方法
+            titleLable.isUserInteractionEnabled = true;
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.titleLableClick(tapGes:)))
+            
+            titleLable.addGestureRecognizer(tapGes)
         }
     }
     
@@ -94,7 +110,37 @@ extension pageTitleView{
         scoreLine.frame = CGRect(x: firstLab.frame.origin.x, y: firstLab.frame.size.height-lableH , width: firstLab.frame.size.width, height: kTitleLineH)
         scoreView.addSubview(scoreLine)
         
+        
+        
+        
     }
 
 
 }
+
+extension pageTitleView{
+   @objc private func titleLableClick(tapGes:UITapGestureRecognizer){
+        //获取当前的lable
+    guard let currentLable = tapGes.view as? UILabel else{return}
+        //获取之前的lable
+    let oldLabel = titleLabels[lableIndex]
+        //改变文字切换的颜色
+    currentLable.textColor = UIColor.orange
+    oldLabel.textColor = UIColor.darkGray
+        //保存最新的lable值到index
+    lableIndex = currentLable.tag
+        //改变titleLine的偏移量
+    let newX = scoreLine.frame.size.width * CGFloat(lableIndex)
+    UIView.animate(withDuration: 0.15) {
+        self.scoreLine.frame.origin.x = newX
+    }
+        //通知代理
+   delagate?.pagetitleView(title: self, seleIndex: lableIndex)
+    
+    }
+}
+
+
+
+
+
