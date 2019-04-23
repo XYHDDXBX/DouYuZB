@@ -39,7 +39,7 @@ class pageTitleView: UIView {
     //懒加载scoreLine属性
     lazy var scoreLine:UIView = {
         let scoreLine = UIView()
-        scoreLine.backgroundColor = UIColor.orange
+        scoreLine.backgroundColor  = UIColor(red: 255, green: 165, blue: 0)
         return scoreLine
     }()
     
@@ -81,7 +81,7 @@ extension pageTitleView{
             titleLable.tag = index
             titleLable.textAlignment = .center
             titleLable.font = UIFont.systemFont(ofSize: 16.0)
-            titleLable.textColor = UIColor.darkGray
+            titleLable.textColor = UIColor(red: 169, green: 169, blue: 169)
             //设置lable的尺寸
             let lableX:CGFloat = lableW * CGFloat(index)
             titleLable.frame = CGRect(x: lableX, y: lableY, width: lableW, height: lableH)
@@ -106,7 +106,7 @@ extension pageTitleView{
         
         //设置scrowLine
         guard let firstLab = titleLabels.first else { return }
-        firstLab.textColor = UIColor.orange
+        firstLab.textColor = UIColor(red: 255, green: 165, blue: 0)
         scoreLine.frame = CGRect(x: firstLab.frame.origin.x, y: firstLab.frame.size.height-lableH , width: firstLab.frame.size.width, height: kTitleLineH)
         scoreView.addSubview(scoreLine)
         
@@ -120,13 +120,17 @@ extension pageTitleView{
 
 extension pageTitleView{
    @objc private func titleLableClick(tapGes:UITapGestureRecognizer){
+    
         //获取当前的lable
     guard let currentLable = tapGes.view as? UILabel else{return}
+    if currentLable.tag == lableIndex {
+        return
+    }
         //获取之前的lable
     let oldLabel = titleLabels[lableIndex]
         //改变文字切换的颜色
-    currentLable.textColor = UIColor.orange
-    oldLabel.textColor = UIColor.darkGray
+    currentLable.textColor = UIColor(red: 255, green: 165, blue: 0)
+    oldLabel.textColor = UIColor(red: 169, green: 169, blue: 169)
         //保存最新的lable值到index
     lableIndex = currentLable.tag
         //改变titleLine的偏移量
@@ -140,6 +144,40 @@ extension pageTitleView{
     }
 }
 
+//对外暴露的方法
+extension pageTitleView{
+    func setTitleWithProgress(progress:CGFloat,sourceIndex:Int,targetIndex:Int){
+    //取出sourceLable和targetLable
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+let movetotleX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = movetotleX * progress
+        scoreLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        sourceLabel.textColor = UIColor(red: 255-86*progress, green: 165 + 4*progress, blue: 169*progress)
+        targetLabel.textColor = UIColor(red: 169 + 86*progress, green: 169-4*progress, blue: 169-169*progress)
+        
+        /*
+        if sourceIndex > targetIndex || progress != 1 {//右滑
+            SouLabel = sourceLabel
+            Tarlable = targetLabel
+            
+            SouLabel.textColor = UIColor(red: 255-86*progress, green: 165 + 4*progress, blue: 169*progress)
+            Tarlable.textColor = UIColor(red: 169 + 86*progress, green: 169-4*progress, blue: 169-169*progress)
+            
+            
+        }else if sourceIndex < targetIndex || progress != 1{//左滑
+            SouLabel = sourceLabel
+            Tarlable = targetLabel
+            SouLabel.textColor = UIColor(red: 255-86*progress, green: 165 + 4*progress, blue: 169*progress)
+            Tarlable.textColor = UIColor(red: 169 + 86*progress, green: 169-4*progress, blue: 169-169*progress)
+        }else{
+            SouLabel.textColor = UIColor.darkGray
+            Tarlable.textColor = UIColor.orange
+        }
+        */
+        lableIndex = targetIndex
+    }
+}
 
 
 
