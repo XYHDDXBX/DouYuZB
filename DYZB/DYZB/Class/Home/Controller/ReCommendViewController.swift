@@ -10,10 +10,12 @@ import UIKit
 
 private let KitemMatgin:CGFloat = 10
 private let ItemW = (kScreenW - 3*KitemMatgin) / 2
-private let ItemH = ItemW * 3 / 4
+private let NomalItemH = ItemW * 3 / 4
+private let PrettyItemH = ItemW * 4 / 3
 private let KheaderH:CGFloat = 40
 
 private let KnomalCell = "KnomalCell"
+private let KperrtyCell = "KperrtyCell"
 private let KheaderView = "KheaderView"
 
 class ReCommendViewController: UIViewController {
@@ -21,7 +23,6 @@ class ReCommendViewController: UIViewController {
     lazy var collectionView:UICollectionView = {[unowned self] in
         //布局layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: ItemW, height: ItemH)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = KitemMatgin
         layout.sectionInset = UIEdgeInsets(top: 0, left: KitemMatgin, bottom: 0, right: KitemMatgin)
@@ -30,11 +31,14 @@ class ReCommendViewController: UIViewController {
         //创建collectionview
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.register(UINib(nibName: "CollectionNomalViewCell", bundle: nil), forCellWithReuseIdentifier: KnomalCell)
+        
+        collectionView.register(UINib(nibName: "CollectionPerrtyViewCell", bundle: nil), forCellWithReuseIdentifier: KperrtyCell)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KheaderView)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.white
         collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
  
@@ -67,7 +71,13 @@ extension ReCommendViewController:UICollectionViewDataSource{
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KnomalCell, for: indexPath)
+        var cell:UICollectionViewCell
+        
+        if indexPath.section == 1 {
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: KperrtyCell, for: indexPath)
+        }else{
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: KnomalCell, for: indexPath)
+        }
         
         return cell
         
@@ -83,6 +93,15 @@ extension ReCommendViewController:UICollectionViewDataSource{
 
 
 //遵循UICollectionViewDelagate协议
-extension ReCommendViewController:UICollectionViewDelegate{
-    
+extension ReCommendViewController:UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var itemSize:CGSize
+        
+        if indexPath.section == 1 {
+        itemSize = CGSize(width: ItemW, height: PrettyItemH)
+        }else{
+        itemSize = CGSize(width: ItemW, height: NomalItemH)
+        }
+        return itemSize
+    }
 }
