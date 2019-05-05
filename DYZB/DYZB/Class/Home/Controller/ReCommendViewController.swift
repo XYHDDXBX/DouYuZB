@@ -19,6 +19,11 @@ private let KperrtyCell = "KperrtyCell"
 private let KheaderView = "KheaderView"
 
 class ReCommendViewController: UIViewController {
+    
+    //懒加载一个viewmodel
+    private lazy var commendVM:CommendViewModel = CommendViewModel()
+    
+    
     //懒加载添加一个UICollectionView
     lazy var collectionView:UICollectionView = {[unowned self] in
         //布局layout
@@ -46,6 +51,7 @@ class ReCommendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        loadData()
     }
     
 
@@ -53,9 +59,18 @@ class ReCommendViewController: UIViewController {
 extension ReCommendViewController{
     private func setUpUI(){
         self.view.addSubview(collectionView)
-
+        
     }
 }
+
+//加载网络数据
+extension ReCommendViewController{
+    private func loadData(){
+       commendVM.loadData()
+    }
+}
+
+
 
 //遵循UICollectionViewDataSouce协议
 extension ReCommendViewController:UICollectionViewDataSource{

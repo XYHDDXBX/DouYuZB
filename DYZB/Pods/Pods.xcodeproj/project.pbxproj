@@ -405,10 +405,11 @@
 			};
 			name = Debug;
 		};
-		A18C9CC7E37563F2891E7DC87F2DE6CE /* Release */ = {
+		5710D7AF10032874BF9A3D967846C399 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33A04B5D27E86AF4B84D95E21CF3F452 /* Alamofire.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -442,11 +443,12 @@
 			};
 			name = Release;
 		};
-		C5351EA42673220B8D24341F18DAED93 /* Debug */ = {
+		9B42C688F69CEAF3C304469DCB90D24D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 154ECBA540D09096B8FC9D8588A46B92 /* Pods-DYZB.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -481,11 +483,12 @@
 			};
 			name = Debug;
 		};
-		E35B48E2FF721AB6EB6144FB57273922 /* Release */ = {
+		C4976C10C4A7A2B449753AA58A776BBA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 71B7D1627839CC06D582DA671BCCE9F0 /* Pods-DYZB.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -520,10 +523,11 @@
 			};
 			name = Release;
 		};
-		EA0ADC75B20BB62958101306980460E6 /* Debug */ = {
+		E81474AB266B76537131B65CB554AA7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33A04B5D27E86AF4B84D95E21CF3F452 /* Alamofire.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -620,8 +624,8 @@
 		1B7AC09E2697DEE0CBA741B7C8D24E1D /* Build configuration list for PBXNativeTarget "Pods-DYZB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5351EA42673220B8D24341F18DAED93 /* Debug */,
-				E35B48E2FF721AB6EB6144FB57273922 /* Release */,
+				9B42C688F69CEAF3C304469DCB90D24D /* Debug */,
+				C4976C10C4A7A2B449753AA58A776BBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -638,8 +642,8 @@
 		419E5D95491847CD79841B971A8A3277 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EA0ADC75B20BB62958101306980460E6 /* Debug */,
-				A18C9CC7E37563F2891E7DC87F2DE6CE /* Release */,
+				E81474AB266B76537131B65CB554AA7C /* Debug */,
+				5710D7AF10032874BF9A3D967846C399 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

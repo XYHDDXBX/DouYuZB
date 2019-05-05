@@ -12,6 +12,7 @@
 		DF05A5912265D720003AC9DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF05A5902265D720003AC9DE /* Assets.xcassets */; };
 		DF21D44022718F8A00150B71 /* CollectionPerrtyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF21D43E22718F8A00150B71 /* CollectionPerrtyViewCell.swift */; };
 		DF21D44122718F8A00150B71 /* CollectionPerrtyViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF21D43F22718F8A00150B71 /* CollectionPerrtyViewCell.xib */; };
+		DF21D4432271A77000150B71 /* NetWorkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF21D4422271A77000150B71 /* NetWorkingTool.swift */; };
 		DF26D9CD226810EE00B3115D /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF26D9CC226810EE00B3115D /* Follow.storyboard */; };
 		DF26D9CF226810F900B3115D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF26D9CE226810F900B3115D /* Home.storyboard */; };
 		DF26D9D12268110C00B3115D /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF26D9D02268110C00B3115D /* Live.storyboard */; };
@@ -21,6 +22,9 @@
 		DF26D9D92268526C00B3115D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D82268526C00B3115D /* common.swift */; };
 		DF26D9DB2268693300B3115D /* pageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9DA2268693300B3115D /* pageContentView.swift */; };
 		DF26D9DD2268771600B3115D /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9DC2268771600B3115D /* UIColor-Extension.swift */; };
+		DFA3B41C2275591700AB98CA /* CommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B41B2275591700AB98CA /* CommendViewModel.swift */; };
+		DFA3B41E22755BA700AB98CA /* Date-Exectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B41D22755BA700AB98CA /* Date-Exectation.swift */; };
+		DFA3B4202275850000AB98CA /* AnchoGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B41F2275850000AB98CA /* AnchoGroup.swift */; };
 		DFAE25F7226EF29A00BE6D04 /* ReCommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE25F6226EF29A00BE6D04 /* ReCommendViewController.swift */; };
 		DFAE25FA226F0A3500BE6D04 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE25F8226F0A3500BE6D04 /* CollectionHeaderView.swift */; };
 		DFAE25FB226F0A3500BE6D04 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAE25F9226F0A3500BE6D04 /* CollectionHeaderView.xib */; };
@@ -41,6 +45,7 @@
 		DF05A5952265D720003AC9DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF21D43E22718F8A00150B71 /* CollectionPerrtyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPerrtyViewCell.swift; sourceTree = "<group>"; };
 		DF21D43F22718F8A00150B71 /* CollectionPerrtyViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionPerrtyViewCell.xib; sourceTree = "<group>"; };
+		DF21D4422271A77000150B71 /* NetWorkingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkingTool.swift; sourceTree = "<group>"; };
 		DF26D9CC226810EE00B3115D /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
 		DF26D9CE226810F900B3115D /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DF26D9D02268110C00B3115D /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
@@ -50,6 +55,9 @@
 		DF26D9D82268526C00B3115D /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		DF26D9DA2268693300B3115D /* pageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageContentView.swift; sourceTree = "<group>"; };
 		DF26D9DC2268771600B3115D /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		DFA3B41B2275591700AB98CA /* CommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommendViewModel.swift; sourceTree = "<group>"; };
+		DFA3B41D22755BA700AB98CA /* Date-Exectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-Exectation.swift"; sourceTree = "<group>"; };
+		DFA3B41F2275850000AB98CA /* AnchoGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchoGroup.swift; sourceTree = "<group>"; };
 		DFAE25F6226EF29A00BE6D04 /* ReCommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReCommendViewController.swift; sourceTree = "<group>"; };
 		DFAE25F8226F0A3500BE6D04 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		DFAE25F9226F0A3500BE6D04 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
@@ -153,6 +161,7 @@
 		DF26D9BA2268104700B3115D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DFA3B418227556EC00AB98CA /* ViewModel */,
 				DF26D9BB2268104700B3115D /* Controller */,
 				DF26D9BC2268104700B3115D /* Model */,
 				DF26D9BD2268104700B3115D /* View */,
@@ -224,6 +233,8 @@
 				DF26D9D422681E2500B3115D /* UIBarButtonItem-Extension.swift */,
 				DF26D9D82268526C00B3115D /* common.swift */,
 				DF26D9DC2268771600B3115D /* UIColor-Extension.swift */,
+				DF21D4422271A77000150B71 /* NetWorkingTool.swift */,
+				DFA3B41D22755BA700AB98CA /* Date-Exectation.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -253,6 +264,7 @@
 		DF26D9C92268106800B3115D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DFA3B41F2275850000AB98CA /* AnchoGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +289,14 @@
 				DF05A58D2265D71E003AC9DE /* Main.storyboard */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DFA3B418227556EC00AB98CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DFA3B41B2275591700AB98CA /* CommendViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DFC6146F2267094600AED9A5 /* Class */ = {
@@ -431,16 +451,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF05A58A2265D71E003AC9DE /* AppDelegate.swift in Sources */,
+				DFA3B4202275850000AB98CA /* AnchoGroup.swift in Sources */,
 				DFAE25FA226F0A3500BE6D04 /* CollectionHeaderView.swift in Sources */,
 				DF26D9DD2268771600B3115D /* UIColor-Extension.swift in Sources */,
 				DFAE25F7226EF29A00BE6D04 /* ReCommendViewController.swift in Sources */,
 				DFC614812267175E00AED9A5 /* MainViewController.swift in Sources */,
+				DF21D4432271A77000150B71 /* NetWorkingTool.swift in Sources */,
 				DF26D9DB2268693300B3115D /* pageContentView.swift in Sources */,
 				DF26D9D92268526C00B3115D /* common.swift in Sources */,
 				DF26D9D722684FDB00B3115D /* pageTitleView.swift in Sources */,
 				DF26D9D522681E2500B3115D /* UIBarButtonItem-Extension.swift in Sources */,
+				DFA3B41E22755BA700AB98CA /* Date-Exectation.swift in Sources */,
 				DFAE25FE226F0D4A00BE6D04 /* CollectionNomalViewCell.swift in Sources */,
 				DF21D44022718F8A00150B71 /* CollectionPerrtyViewCell.swift in Sources */,
+				DFA3B41C2275591700AB98CA /* CommendViewModel.swift in Sources */,
 				DF26D9D32268162F00B3115D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5CDE80DA95CA3936808401D /* Pods-DYZB.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
@@ -598,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC4A130915C2D7CF60FC518A /* Pods-DYZB.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
