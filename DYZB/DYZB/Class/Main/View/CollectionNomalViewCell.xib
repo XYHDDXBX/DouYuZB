@@ -69,6 +69,12 @@
                 <constraint firstItem="ESB-60-PmY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xdm-A7-CA3"/>
             </constraints>
             <size key="customSize" width="262" height="220"/>
+            <connections>
+                <outlet property="iconImageView" destination="ESB-60-PmY" id="eQN-Yt-ykd"/>
+                <outlet property="nickname" destination="k5H-1O-YYS" id="GMf-pz-wkT"/>
+                <outlet property="onlineNum" destination="m12-CL-ysy" id="1x3-dd-bQF"/>
+                <outlet property="roomName" destination="P3p-jf-kJ9" id="hiN-xv-iNO"/>
+            </connections>
             <point key="canvasLocation" x="140" y="139"/>
         </collectionViewCell>
     </objects>

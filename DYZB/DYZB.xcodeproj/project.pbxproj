@@ -22,6 +22,7 @@
 		DF26D9D92268526C00B3115D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D82268526C00B3115D /* common.swift */; };
 		DF26D9DB2268693300B3115D /* pageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9DA2268693300B3115D /* pageContentView.swift */; };
 		DF26D9DD2268771600B3115D /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9DC2268771600B3115D /* UIColor-Extension.swift */; };
+		DF978FE5227FC8A30002846C /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF978FE4227FC8A20002846C /* AnchorModel.swift */; };
 		DFA3B41C2275591700AB98CA /* CommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B41B2275591700AB98CA /* CommendViewModel.swift */; };
 		DFA3B41E22755BA700AB98CA /* Date-Exectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B41D22755BA700AB98CA /* Date-Exectation.swift */; };
 		DFA3B4202275850000AB98CA /* AnchoGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B41F2275850000AB98CA /* AnchoGroup.swift */; };
@@ -55,6 +56,7 @@
 		DF26D9D82268526C00B3115D /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		DF26D9DA2268693300B3115D /* pageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageContentView.swift; sourceTree = "<group>"; };
 		DF26D9DC2268771600B3115D /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		DF978FE4227FC8A20002846C /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		DFA3B41B2275591700AB98CA /* CommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommendViewModel.swift; sourceTree = "<group>"; };
 		DFA3B41D22755BA700AB98CA /* Date-Exectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-Exectation.swift"; sourceTree = "<group>"; };
 		DFA3B41F2275850000AB98CA /* AnchoGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchoGroup.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				DFA3B41F2275850000AB98CA /* AnchoGroup.swift */,
+				DF978FE4227FC8A20002846C /* AnchorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,10 +436,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DYZB/Pods-DYZB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,6 +471,7 @@
 				DF21D44022718F8A00150B71 /* CollectionPerrtyViewCell.swift in Sources */,
 				DFA3B41C2275591700AB98CA /* CommendViewModel.swift in Sources */,
 				DF26D9D32268162F00B3115D /* HomeViewController.swift in Sources */,
+				DF978FE5227FC8A30002846C /* AnchorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
