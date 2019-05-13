@@ -17,6 +17,8 @@ private let KheaderH:CGFloat = 40
 private let KnomalCell = "KnomalCell"
 private let KperrtyCell = "KperrtyCell"
 private let KheaderView = "KheaderView"
+private let kCycyleH = kScreenW*3/8
+
 
 class ReCommendViewController: UIViewController {
     
@@ -47,6 +49,15 @@ class ReCommendViewController: UIViewController {
         return collectionView
     }()
  
+    //懒加载cycleVIew
+    private lazy var cycleView:RecommendCycleView = {
+        let cycleView = RecommendCycleView.setupCycleView()
+        cycleView.frame = CGRect(x: 0, y: -kCycyleH, width: kScreenW, height: kCycyleH)
+        return cycleView
+    }()
+    
+    
+    
     //系统的回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +70,10 @@ class ReCommendViewController: UIViewController {
 extension ReCommendViewController{
     private func setUpUI(){
         self.view.addSubview(collectionView)
-        
+        //将cycleView添加到collectionview中
+        self.collectionView.addSubview(cycleView)
+        //设置collectionview的内边距
+        collectionView.contentInset = UIEdgeInsets(top: kCycyleH, left: 0, bottom: 0, right: 0)
     }
 }
 

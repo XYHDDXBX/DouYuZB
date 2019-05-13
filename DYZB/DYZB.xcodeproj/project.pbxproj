@@ -22,6 +22,8 @@
 		DF26D9D92268526C00B3115D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9D82268526C00B3115D /* common.swift */; };
 		DF26D9DB2268693300B3115D /* pageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9DA2268693300B3115D /* pageContentView.swift */; };
 		DF26D9DD2268771600B3115D /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26D9DC2268771600B3115D /* UIColor-Extension.swift */; };
+		DF5B41272289508F002C6969 /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B41262289508F002C6969 /* RecommendCycleView.swift */; };
+		DF5B412B22895B50002C6969 /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF5B412A22895B50002C6969 /* RecommendCycleView.xib */; };
 		DF978FE5227FC8A30002846C /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF978FE4227FC8A20002846C /* AnchorModel.swift */; };
 		DFA3B41C2275591700AB98CA /* CommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B41B2275591700AB98CA /* CommendViewModel.swift */; };
 		DFA3B41E22755BA700AB98CA /* Date-Exectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B41D22755BA700AB98CA /* Date-Exectation.swift */; };
@@ -56,6 +58,8 @@
 		DF26D9D82268526C00B3115D /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		DF26D9DA2268693300B3115D /* pageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageContentView.swift; sourceTree = "<group>"; };
 		DF26D9DC2268771600B3115D /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		DF5B41262289508F002C6969 /* RecommendCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
+		DF5B412A22895B50002C6969 /* RecommendCycleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
 		DF978FE4227FC8A20002846C /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		DFA3B41B2275591700AB98CA /* CommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommendViewModel.swift; sourceTree = "<group>"; };
 		DFA3B41D22755BA700AB98CA /* Date-Exectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-Exectation.swift"; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 			children = (
 				DFAE25F8226F0A3500BE6D04 /* CollectionHeaderView.swift */,
 				DFAE25F9226F0A3500BE6D04 /* CollectionHeaderView.xib */,
+				DF5B41262289508F002C6969 /* RecommendCycleView.swift */,
+				DF5B412A22895B50002C6969 /* RecommendCycleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				DF05A5912265D720003AC9DE /* Assets.xcassets in Resources */,
 				DFAE25FF226F0D4A00BE6D04 /* CollectionNomalViewCell.xib in Resources */,
 				DF05A58F2265D71E003AC9DE /* Main.storyboard in Resources */,
+				DF5B412B22895B50002C6969 /* RecommendCycleView.xib in Resources */,
 				DF21D44122718F8A00150B71 /* CollectionPerrtyViewCell.xib in Resources */,
 				DFAE25FB226F0A3500BE6D04 /* CollectionHeaderView.xib in Resources */,
 				DF26D9CF226810F900B3115D /* Home.storyboard in Resources */,
@@ -459,6 +466,7 @@
 				DFA3B4202275850000AB98CA /* AnchoGroup.swift in Sources */,
 				DFAE25FA226F0A3500BE6D04 /* CollectionHeaderView.swift in Sources */,
 				DF26D9DD2268771600B3115D /* UIColor-Extension.swift in Sources */,
+				DF5B41272289508F002C6969 /* RecommendCycleView.swift in Sources */,
 				DFAE25F7226EF29A00BE6D04 /* ReCommendViewController.swift in Sources */,
 				DFC614812267175E00AED9A5 /* MainViewController.swift in Sources */,
 				DF21D4432271A77000150B71 /* NetWorkingTool.swift in Sources */,
