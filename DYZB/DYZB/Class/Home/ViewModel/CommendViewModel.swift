@@ -12,9 +12,11 @@ class CommendViewModel{
     lazy var anchorGroups:[AnchoGroup] = [AnchoGroup]()
     private lazy var hotDataGroup:AnchoGroup = AnchoGroup()
     private lazy var beautyDataGroup:AnchoGroup = AnchoGroup()
+    lazy var cycleModels:[cycleModel] = [cycleModel]()
 }
 
 extension CommendViewModel{
+    //请求推荐数据
     func loadData(finishCallback:@escaping ()->()) {
         
         let paraments = ["limit" : "4", "offset" : "0", "time" :NSDate.getCurrentTime()]
@@ -87,4 +89,17 @@ extension CommendViewModel{
             finishCallback()
         }
     }
+   
+    //请求轮播数据
+    func loadCycleData(finishCallback:@escaping ()->()){
+        NetWorkingTool.requestNet(type: .GET, URL: "http://www.douyutv.com/api/v1/slide/6", Paraments: ["version" : "2.300"]) { (result) in
+            guard let cycleDict = result as? [String : AnyObject] else{return}
+            guard let cycleArr = cycleDict["data"] as? [[String : AnyObject]]else{return}
+            for dict in cycleArr{
+             self.cycleModels.append(cycleModel(dict: dict))
+            }
+            finishCallback()
+        }
+    }
+
 }

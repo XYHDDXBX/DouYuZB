@@ -24,6 +24,9 @@ class AnchoGroup:NSObject{
    @objc var icon_name:String = "home_header_normal"
     //定义主播的模型对象数组
    @objc lazy var anchors:[AnchorModel] = [AnchorModel]()
+    
+   //组显示的组头图片
+    @objc var icon_url:String = ""
     override init() {
         
     }
