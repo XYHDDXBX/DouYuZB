@@ -34,5 +34,17 @@ class GameCollectionViewCell: UICollectionViewCell {
     }
     
     
+    var topModel:gameModel?{
+        didSet{
+            
+            titleLable.text = topModel?.tag_name
+            let iconUrl = NSURL(string: topModel?.pic_name ?? "")
+            let resource = ImageResource(downloadURL: iconUrl! as URL)
+            iconImageView.kf.setImage(with: resource)
+            
+        }
+    }
+    
+    
     
 }

@@ -14,10 +14,15 @@ class CollectionHeaderView: UICollectionReusableView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
+    @IBOutlet weak var moreBtn: UIButton!
     var group:AnchoGroup?{
         didSet{
            titleLabel.text = group?.tag_name
             iconImageView.image = UIImage(named: group?.icon_name ?? "home_header_normal")
         }
+    }
+    
+  class  func creatHeadView() -> CollectionHeaderView {
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! CollectionHeaderView
     }
 }

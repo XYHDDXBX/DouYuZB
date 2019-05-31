@@ -31,7 +31,6 @@ class RecommendGameView: UIView {
         }
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         gameCollectionView.register(UINib(nibName: "GameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: gameID)
