@@ -21,34 +21,11 @@ private let kCycyleH = kScreenW*3/8
 private let kGameH:CGFloat = 90
 
 
-class ReCommendViewController: UIViewController {
+class ReCommendViewController: BaseViewController {
     
     //懒加载一个viewmodel
     private lazy var commendVM:CommendViewModel = CommendViewModel()
-    
-    
-    //懒加载添加一个UICollectionView
-    lazy var collectionView:UICollectionView = {[unowned self] in
-        //布局layout
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = KitemMatgin
-        layout.sectionInset = UIEdgeInsets(top: 0, left: KitemMatgin, bottom: 0, right: KitemMatgin)
-        layout.headerReferenceSize = CGSize(width: kScreenW, height:KheaderH)
-        
-        //创建collectionview
-        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collectionView.register(UINib(nibName: "CollectionNomalViewCell", bundle: nil), forCellWithReuseIdentifier: KnomalCell)
-        
-        collectionView.register(UINib(nibName: "CollectionPerrtyViewCell", bundle: nil), forCellWithReuseIdentifier: KperrtyCell)
-        collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KheaderView)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.backgroundColor = UIColor.white
-        collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
-        collectionView.showsVerticalScrollIndicator = false
-        return collectionView
-    }()
+
  
     //懒加载cycleVIew
     private lazy var cycleView:RecommendCycleView = {
@@ -63,20 +40,11 @@ class ReCommendViewController: UIViewController {
         gameView.frame = CGRect(x: 0, y: -kGameH, width: kScreenW, height: kGameH)
         return gameView
     }()
-    
-    
-    //系统的回调函数
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpUI()
-        loadData()
-    }
-    
 
 }
 extension ReCommendViewController{
-    private func setUpUI(){
-        self.view.addSubview(collectionView)
+    override func setupUI() {
+        super.setupUI()
         //将cycleView添加到collectionview中
         self.collectionView.addSubview(cycleView)
         //将gameView添加到collectionview中
@@ -88,11 +56,13 @@ extension ReCommendViewController{
 
 //加载网络数据
 extension ReCommendViewController{
-    private func loadData(){
+    override func loadData(){
+        //给父类中的VM赋值
+        baseVM = commendVM
         //加载推荐数据
         commendVM.loadData {
             self.collectionView.reloadData()
-            self.gameView.gameGroup = self.commendVM.anchorGroups
+            self.gameView.gameGroup = self.commendVM.amuseGroups
         }
         //加载轮播数据
         commendVM.loadCycleData {
@@ -102,67 +72,23 @@ extension ReCommendViewController{
     }
 }
 
-
-
-//遵循UICollectionViewDataSouce协议
-extension ReCommendViewController:UICollectionViewDataSource{
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return commendVM.anchorGroups.count
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if section == 0 {
-//            return 8
-//        }else{
-//            return 4
-//        }
-        let group = commendVM.anchorGroups[section]
-        return group.anchors.count
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //取出模型
-        let group = commendVM.anchorGroups[indexPath.section]
-        let model = group.anchors[indexPath.item]
-        
-        
-//        var cell:UICollectionViewCell
-        
-        if indexPath.section == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KperrtyCell, for: indexPath) as! CollectionPerrtyViewCell
-            cell.model = model
-            return cell
-            
-        }else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KnomalCell, for: indexPath) as! CollectionNomalViewCell
-            cell.model = model
-            return cell
-            
-        }
-        
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        //取出headerview
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: KheaderView, for: indexPath) as! CollectionHeaderView
-        headerView.backgroundColor = UIColor.white
-        headerView.group = commendVM.anchorGroups[indexPath.section]
-        return headerView
-    }
-}
-
-
-//遵循UICollectionViewDelagate协议
 extension ReCommendViewController:UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var itemSize:CGSize
-        
-        if indexPath.section == 1 {
-        itemSize = CGSize(width: ItemW, height: PrettyItemH)
-        }else{
-        itemSize = CGSize(width: ItemW, height: NomalItemH)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 1{
+let prettCell = collectionView.dequeueReusableCell(withReuseIdentifier: KperrtyCell, for: indexPath) as! CollectionPerrtyViewCell
+    prettCell.model = commendVM.amuseGroups[indexPath.section].anchors[indexPath.item]
+            return prettCell
+            
         }
-        return itemSize
+        return super.collectionView(collectionView, cellForItemAt: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+        return CGSize(width: ItemW, height: PrettyItemH)
+        }
+        return CGSize(width: ItemW, height: NomalItemH)
+
     }
 }
+

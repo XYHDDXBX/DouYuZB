@@ -40,17 +40,7 @@ class AnchoGroup:NSObject{
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
 
     }
-    /*
-    override func setValue(_ value: Any?, forKey key: String) {
-        if key == "room_list" {
-            if let dataArr = value as? [[String:AnyObject]]{
-                for dict in dataArr{
-                    anchors.append(AnchorModel(dict: dict))
-                }
-            }
-        }
-    }
-    */
+   
 }
 
 

@@ -7,9 +7,8 @@
 //
 
 import UIKit
-class CommendViewModel{
+class CommendViewModel:BaseViewmodel{
 //    //懒加载属性
-    lazy var anchorGroups:[AnchoGroup] = [AnchoGroup]()
     private lazy var hotDataGroup:AnchoGroup = AnchoGroup()
     private lazy var beautyDataGroup:AnchoGroup = AnchoGroup()
     lazy var cycleModels:[cycleModel] = [cycleModel]()
@@ -67,25 +66,15 @@ extension CommendViewModel{
         //获取第三组后面的数据
         //http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time=NSDate.getCurrentTime()
         dispatchGroup.enter()
-        NetWorkingTool .requestNet(type: .GET, URL: "http://capi.douyucdn.cn/api/v1/getHotCate", Paraments:paraments) { (result) in
-            
-            //1.将result转成字典类型
-            guard let resultDict = result as? [String:AnyObject] else{return}
-            //2.根据data的改key获取数组
-            guard let dictArr = resultDict["data"] as? [[String : AnyObject]] else {return}
-            //3.便利数组获取字典并且在字典转成模型对象
-            for dict in dictArr{
-                let anchor = AnchoGroup(dict: dict)
-                self.anchorGroups.append(anchor)
-            }
+        
+        loadAnchordata(urlstring:"http://capi.douyucdn.cn/api/v1/getHotCate" , paramenter: paraments as [String : AnyObject]) {
             //离开组
-            dispatchGroup.leave()
-//            print("请求到2-12组数据")
+           dispatchGroup.leave()
         }
+        
         dispatchGroup.notify(qos: .userInteractive, flags: .barrier, queue: DispatchQueue.main) {
-//            print("请求到所有的数据")
-            self.anchorGroups.insert(self.beautyDataGroup, at: 0)
-            self.anchorGroups.insert(self.hotDataGroup, at: 0)
+            self.amuseGroups.insert(self.beautyDataGroup, at: 0)
+            self.amuseGroups.insert(self.hotDataGroup, at: 0)
             finishCallback()
         }
     }
