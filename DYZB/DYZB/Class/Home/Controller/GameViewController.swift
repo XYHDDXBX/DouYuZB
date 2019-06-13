@@ -16,7 +16,7 @@ private let GameID = "GameID"
 private let GameHeadID = "GameHeadID"
 private let headerH:CGFloat = 50
 private let ScoreH:CGFloat = 90
-class GameViewController: UIViewController {
+class GameViewController: MoreBaseViewController {
     
 //懒加载collectionview属性
     fileprivate lazy var gameVM:GameViewModel = GameViewModel()
@@ -63,18 +63,21 @@ class GameViewController: UIViewController {
 //系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpUI()
+        setupUI()
         loadData()
   }
 }
 
 extension GameViewController{
-    fileprivate func setUpUI(){
+    override func setupUI() {
+        contentView = gameView
         view.addSubview(gameView)
         gameView.addSubview(topGameHeaderView)
         gameView.addSubview(scoreView)
         gameView.contentInset = UIEdgeInsets(top: headerH + ScoreH, left: 0, bottom: 0, right: 0)
+        super.setupUI()
     }
+    
 }
 
 extension GameViewController{
@@ -84,8 +87,10 @@ extension GameViewController{
         self.gameView.reloadData()
             //展示常用游戏
         self.scoreView.topGames = Array(self.gameVM.games[0..<10])
+        self.hiddenContentView()
         }
     }
+    
 }
 
 extension GameViewController:UICollectionViewDataSource{

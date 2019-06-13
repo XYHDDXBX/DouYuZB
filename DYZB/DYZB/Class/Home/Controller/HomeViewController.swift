@@ -33,11 +33,12 @@ class HomeViewController: UIViewController {
         childVCs.append(ReCommendViewController())
         childVCs.append(GameViewController())
         childVCs.append(AmuseViewController())
-        for _ in 0..<1{
-            let vc = UIViewController()
-            childVCs.append(vc)
-            vc.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue: CGFloat(arc4random_uniform(255)))
-        }
+        childVCs.append(FunnyViewController())
+//        for _ in 0..<1{
+//            let vc = UIViewController()
+//            childVCs.append(vc)
+//            vc.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue: CGFloat(arc4random_uniform(255)))
+//        }
         let contentView = pageContentView(frame: pageViewFrame, childVC: childVCs, parentVC: self)
         contentView.delaget = self
         return contentView

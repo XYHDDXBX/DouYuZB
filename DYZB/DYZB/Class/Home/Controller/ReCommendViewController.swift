@@ -44,13 +44,14 @@ class ReCommendViewController: BaseViewController {
 }
 extension ReCommendViewController{
     override func setupUI() {
-        super.setupUI()
+        contentView = collectionView
         //将cycleView添加到collectionview中
         self.collectionView.addSubview(cycleView)
         //将gameView添加到collectionview中
         self.collectionView.addSubview(gameView)
         //设置collectionview的内边距
         collectionView.contentInset = UIEdgeInsets(top: kCycyleH + kGameH, left: 0, bottom: 0, right: 0)
+        super.setupUI()
     }
 }
 
@@ -63,12 +64,14 @@ extension ReCommendViewController{
         commendVM.loadData {
             self.collectionView.reloadData()
             self.gameView.gameGroup = self.commendVM.amuseGroups
+            self.hiddenContentView()
         }
         //加载轮播数据
         commendVM.loadCycleData {
             self.cycleView.cycleModels = self.commendVM.cycleModels
         }
         
+       
     }
 }
 

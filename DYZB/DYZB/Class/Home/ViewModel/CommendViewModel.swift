@@ -65,6 +65,8 @@ extension CommendViewModel{
         
         //获取第三组后面的数据
         //http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time=NSDate.getCurrentTime()
+        
+        //http://capi.douyucdn.cn/api/v1/getColumnRoom/3
         dispatchGroup.enter()
         
         loadAnchordata(urlstring:"http://capi.douyucdn.cn/api/v1/getHotCate" , paramenter: paraments as [String : AnyObject]) {

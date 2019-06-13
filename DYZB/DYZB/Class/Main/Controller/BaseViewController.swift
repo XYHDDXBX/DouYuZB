@@ -19,7 +19,7 @@ private let KheaderView = "KheaderView"
 private let kCycyleH = kScreenW*3/8
 private let kGameH:CGFloat = 90
 
-class BaseViewController: UIViewController {
+class BaseViewController: MoreBaseViewController {
     //定义属性
     var baseVM:BaseViewmodel!
     
@@ -55,14 +55,19 @@ class BaseViewController: UIViewController {
 
 
 extension BaseViewController{
-   @objc func setupUI(){
+//   @objc func setupUI(){
+//        self.view.addSubview(collectionView)
+//    }
+    override func setupUI() {
+        contentView = collectionView
         self.view.addSubview(collectionView)
+        super.setupUI()
     }
 }
 
 extension BaseViewController{
    @objc func loadData(){
-        
+       
     }
 }
 

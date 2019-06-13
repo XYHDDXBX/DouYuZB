@@ -27,13 +27,17 @@ extension AmuseViewController{
         amuseVM.loadAmuseData {
             self.collectionView.reloadData()
             self.amuseTopView.groups = self.amuseVM.amuseGroups
+            self.hiddenContentView()
         }
+        
     }
     
     override func setupUI() {
-        super.setupUI()
+        
+        contentView = collectionView
         collectionView.addSubview(amuseTopView)
         collectionView.contentInset = UIEdgeInsets(top: KtopViewH, left: 0, bottom: 0, right: 0)
+        super.setupUI()
     }
 }
 
