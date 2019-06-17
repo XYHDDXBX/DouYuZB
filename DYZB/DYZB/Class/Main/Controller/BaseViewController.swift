@@ -72,7 +72,7 @@ extension BaseViewController{
 }
 
 
-extension BaseViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension BaseViewController:UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return baseVM.amuseGroups.count
@@ -101,7 +101,26 @@ extension BaseViewController:UICollectionViewDelegate,UICollectionViewDataSource
 }
 
 
-
+extension BaseViewController:UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let anchor = baseVM.amuseGroups[indexPath.section].anchors[indexPath.item]
+        anchor.isVertical == 0 ? showNomalRoom():showShowRoom()
+        
+    }
+    
+    //普通房间是push
+    private func showNomalRoom(){
+        let nomalRoom = RoomNomalViewController()
+        navigationController?.pushViewController(nomalRoom, animated: true)
+        
+    }
+    //show场房间是model
+    private func showShowRoom(){
+        let showRoom = RoomShowViewController()
+        present(showRoom, animated: true, completion: nil)
+        
+    }
+}
 
 
 

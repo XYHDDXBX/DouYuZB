@@ -46,6 +46,9 @@
 		DFAE25FB226F0A3500BE6D04 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAE25F9226F0A3500BE6D04 /* CollectionHeaderView.xib */; };
 		DFAE25FE226F0D4A00BE6D04 /* CollectionNomalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE25FC226F0D4A00BE6D04 /* CollectionNomalViewCell.swift */; };
 		DFAE25FF226F0D4A00BE6D04 /* CollectionNomalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAE25FD226F0D4A00BE6D04 /* CollectionNomalViewCell.xib */; };
+		DFC5806F22B743680052AD8D /* RoomNomalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC5806E22B743680052AD8D /* RoomNomalViewController.swift */; };
+		DFC5807122B743790052AD8D /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC5807022B743790052AD8D /* RoomShowViewController.swift */; };
+		DFC5807322B747EA0052AD8D /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC5807222B747EA0052AD8D /* CustomNavigationViewController.swift */; };
 		DFC601C822B1F1830059946E /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC601C722B1F1830059946E /* FunnyViewController.swift */; };
 		DFC601CA22B1F2120059946E /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC601C922B1F2120059946E /* FunnyViewModel.swift */; };
 		DFC601CC22B1FC370059946E /* MoreBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC601CB22B1FC370059946E /* MoreBaseViewController.swift */; };
@@ -105,6 +108,9 @@
 		DFAE25F9226F0A3500BE6D04 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
 		DFAE25FC226F0D4A00BE6D04 /* CollectionNomalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNomalViewCell.swift; sourceTree = "<group>"; };
 		DFAE25FD226F0D4A00BE6D04 /* CollectionNomalViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionNomalViewCell.xib; sourceTree = "<group>"; };
+		DFC5806E22B743680052AD8D /* RoomNomalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomNomalViewController.swift; sourceTree = "<group>"; };
+		DFC5807022B743790052AD8D /* RoomShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
+		DFC5807222B747EA0052AD8D /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		DFC601C722B1F1830059946E /* FunnyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 		DFC601C922B1F2120059946E /* FunnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
 		DFC601CB22B1FC370059946E /* MoreBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreBaseViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +367,7 @@
 				DF05A58D2265D71E003AC9DE /* Main.storyboard */,
 				DF777F2422A61394004B283D /* BaseViewController.swift */,
 				DFC601CB22B1FC370059946E /* MoreBaseViewController.swift */,
+				DFC5807222B747EA0052AD8D /* CustomNavigationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,9 +391,43 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DFC5806A22B743520052AD8D /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				DFC5806B22B743520052AD8D /* Controller */,
+				DFC5806C22B743520052AD8D /* Model */,
+				DFC5806D22B743520052AD8D /* View */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		DFC5806B22B743520052AD8D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DFC5806E22B743680052AD8D /* RoomNomalViewController.swift */,
+				DFC5807022B743790052AD8D /* RoomShowViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DFC5806C22B743520052AD8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DFC5806D22B743520052AD8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DFC6146F2267094600AED9A5 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				DFC5806A22B743520052AD8D /* Room */,
 				DFC614752267094600AED9A5 /* Main */,
 				DF26D9C22268104700B3115D /* Tools */,
 				DF26D9BA2268104700B3115D /* Home */,
@@ -568,15 +609,18 @@
 				DFC601C822B1F1830059946E /* FunnyViewController.swift in Sources */,
 				DF970FBB22A1196800F88214 /* AmuseViewModel.swift in Sources */,
 				DFA3B41E22755BA700AB98CA /* Date-Exectation.swift in Sources */,
+				DFC5807322B747EA0052AD8D /* CustomNavigationViewController.swift in Sources */,
 				DFC857E3228D500D002A76AF /* RecommendGameView.swift in Sources */,
 				DFC857DD228D1186002A76AF /* cycleModel.swift in Sources */,
 				DF970FA922A0D03100F88214 /* ToGameView.swift in Sources */,
 				DFAE25FE226F0D4A00BE6D04 /* CollectionNomalViewCell.swift in Sources */,
+				DFC5806F22B743680052AD8D /* RoomNomalViewController.swift in Sources */,
 				DF620C2722B0A06300F721C4 /* AmuseTopViewCell.swift in Sources */,
 				DF21D44022718F8A00150B71 /* CollectionPerrtyViewCell.swift in Sources */,
 				DFA3B41C2275591700AB98CA /* CommendViewModel.swift in Sources */,
 				DF26D9D32268162F00B3115D /* HomeViewController.swift in Sources */,
 				DF4134CB229E75C9008612F8 /* gameModel.swift in Sources */,
+				DFC5807122B743790052AD8D /* RoomShowViewController.swift in Sources */,
 				DF978FE5227FC8A30002846C /* AnchorModel.swift in Sources */,
 				DFC601CA22B1F2120059946E /* FunnyViewModel.swift in Sources */,
 				DFC601CC22B1FC370059946E /* MoreBaseViewController.swift in Sources */,
